@@ -20,24 +20,24 @@ public class BeerController {
 
     @Autowired
     public BeerController(BeerRepository repo) {
-	repository = repo;
+        repository = repo;
     }
 
     @RequestMapping(method = GET, value = "/beers/search/findBestPlaylistBeer")
     public @ResponseBody ResponseEntity<?> findByAverageTemperature(String temperature) {
-	if (StringUtils.isEmpty(temperature)) {
-	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("missing param 'temperature'");
-	}
+        if (StringUtils.isEmpty(temperature)) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("missing param 'temperature'");
+        }
 
-	List<Beer> beers = repository.findByAverageTemperature(Integer.parseInt(temperature));
+        List<Beer> beers = repository.findByAverageTemperature(Integer.parseInt(temperature));
 
-	if (beers.isEmpty()) {
-	    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("no beers found!");
-	}
+        if (beers.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("no beers found!");
+        }
 
-	Resource<Beer> resources = new Resource<Beer>(beers.get(0));
+        Resource<Beer> resources = new Resource<Beer>(beers.get(0));
 
-	return ResponseEntity.ok(resources);
+        return ResponseEntity.ok(resources);
     }
 
 }

@@ -25,55 +25,55 @@ public class Beer {
     private int averageTempInCelsius;
 
     public Beer() {
-	super();
+        super();
     }
 
     public Beer(String name, int minTemp, int maxTemp) {
-	super();
-	this.name = name;
-	this.maxTempInCelsius = maxTemp;
-	this.minTempInCelsius = minTemp;
-	calcAverageTempInCelsius();
+        super();
+        this.name = name;
+        this.maxTempInCelsius = maxTemp;
+        this.minTempInCelsius = minTemp;
+        calcAverageTempInCelsius();
     }
 
     public int getMaxTemp() {
-	return maxTempInCelsius;
+        return maxTempInCelsius;
     }
 
     public void setMaxTemp(int maxTemp) {
-	this.maxTempInCelsius = maxTemp;
-	calcAverageTempInCelsius();
+        this.maxTempInCelsius = maxTemp;
+        calcAverageTempInCelsius();
     }
 
     public int getMinTemp() {
-	return minTempInCelsius;
+        return minTempInCelsius;
     }
 
     public void setMinTemp(int minTemp) {
-	this.minTempInCelsius = minTemp;
-	calcAverageTempInCelsius();
+        this.minTempInCelsius = minTemp;
+        calcAverageTempInCelsius();
     }
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public void setName(String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public int getAverageTempInCelsius() {
-	return averageTempInCelsius;
+        return averageTempInCelsius;
     }
 
     private void calcAverageTempInCelsius() {
-	int sumTemp = (this.minTempInCelsius + this.maxTempInCelsius);
-	this.averageTempInCelsius = Math.round(sumTemp / 2);
+        int sumTemp = (this.minTempInCelsius + this.maxTempInCelsius);
+        this.averageTempInCelsius = Math.round(sumTemp / 2);
     }
 
     @Override
     public String toString() {
-	return "Beer [id=" + id + ", name=" + name + ", maxTempInCelsius=" + maxTempInCelsius + ", minTempInCelsius="
-		+ minTempInCelsius + "]";
+        return "Beer [id=" + id + ", name=" + name + ", maxTempInCelsius=" + maxTempInCelsius + ", minTempInCelsius="
+                + minTempInCelsius + "]";
     }
 }
