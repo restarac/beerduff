@@ -12,10 +12,12 @@ import com.wrapper.spotify.model_objects.credentials.ClientCredentials;
 @Component
 public class SpotifyConfiguration {
 
+    private static final String CLIENT_ID = "client-id";
+    private static final String CLIENT_TOKEN = "client-token";
+
     @Bean
     public SpotifyApi spotifyApi() {
-        return new SpotifyApi.Builder().setClientId("client-id")
-                .setClientSecret("client-token").build();
+        return new SpotifyApi.Builder().setClientId(CLIENT_ID).setClientSecret(CLIENT_TOKEN).build();
     }
 
     @Bean("authenticated")
