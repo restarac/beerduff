@@ -1,4 +1,4 @@
-package beerduff.api;
+package beerduff.api.beer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package beerduff.api;
+package beerduff.api.beer;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -29,9 +29,9 @@ import com.wrapper.spotify.model_objects.specification.PlaylistSimplified;
 import com.wrapper.spotify.model_objects.specification.PlaylistTrack;
 import com.wrapper.spotify.requests.data.search.simplified.SearchPlaylistsRequest;
 
-import beerduff.api.BeerController.BeerWithSpotify;
-import beerduff.api.BeerController.SpotifyPlaylistWithTracks;
-import beerduff.api.BeerController.SpotifyTracks;
+import beerduff.api.beer.BeerController.BeerWithSpotify;
+import beerduff.api.beer.BeerController.SpotifyPlaylistWithTracks;
+import beerduff.api.beer.BeerController.SpotifyTracks;
 
 @RepositoryRestController
 public class BeerController {

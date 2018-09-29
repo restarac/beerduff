@@ -1,4 +1,4 @@
-package beerduff.api;
+package beerduff.api.beer;
 
 import java.util.List;
 
