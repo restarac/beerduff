@@ -19,6 +19,7 @@ import beerduff.api.beer.Beer;
 
 @Service
 public class SpotifyService {
+    // this could be a configuration or a instance parameter, but for simplicity i choose the constant way
     private static final int PLAYLIST_LIMIT = 3;
     private static final int TRACKS_LIMIT = 5;
 

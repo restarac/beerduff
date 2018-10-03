@@ -1,10 +1,10 @@
 package beerduff.api.configuration;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
-import org.springframework.stereotype.Component;
 
-@Component
+@Configuration
 public class CustomizedRestMvcConfiguration extends RepositoryRestConfigurerAdapter {
 
 	@Override
