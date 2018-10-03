@@ -1,12 +1,10 @@
-package beerduff.api;
+package beerduff.api.beer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Beer {
@@ -20,7 +18,6 @@ public class Beer {
     private int maxTempInCelsius;
     @Column(name = "min_temp", nullable = false)
     private int minTempInCelsius;
-//	@JsonIgnore
     @Column(name = "average_temp", nullable = false)
     private int averageTempInCelsius;
 
