@@ -1,8 +1,10 @@
-# beerduff
+# Beerduff
+
+Sistema com uma interface Restfull para inclusão de cervejas e tambem para informa qual cerveja e playlist combina com uma certa temperatura.
 
 ## how to run
 
-Requirements:
+Requisitos:
 - Java
 - Gradle (Opcional, se já tive instalado utilize `gradle` no lugar de `./gradlew`)
 
@@ -14,25 +16,31 @@ Nos logs do console há informando qual host e porta o SpringBoot iniciou.
 
 #### Acessando a API
 
-A API usa o banco em memoria H2 (http://www.h2database.com/html/main.html).
+A API usa o banco em memoria H2 (http://www.h2database.com/html/main.html), então não espere que suas alteração estejam lá quando reiniciar o servidor.
+
 Toda vez quando o servidor inicializa ele executa a classe `BeerSetup` e preenche com algumas cervejas pre-selecionadas.
 
-`GET /api` --redirect--> `GET /api/browser/index.html#/api`
+Uma chamada em '/api' redireciona para o browser hal (uma ferramenta util para visualizar as informações de resposta da api):
 
-Acesse o path: `/api/beers/search/findBestPlaylistBeer?temperature=0` e veja qual a cerveja é a mais indicada para essa temperatura.
+```
+GET '/api' --redirect--> GET '/api/browser/index.html#/api'
+```
 
-Todas as rotas devolvem um atributo profile, que é parte da especificação JSON para o HAL (https://tools.ietf.org/html/draft-kelly-json-hal-08#section-5.6). O spring adiciona isso como padrão, e é uma forma complementar de documentação da sua rota restfull sem a necessidade de outra ferramenta como o `swagger`
+#### CRUD Beer
 
-##### CRUD Beer
+Buscas:
+- `GET /api/beers/search/findBestPlaylistBeer?temperature=0` - Veja qual a Cerveja e Playlist é a mais indicada para essa temperatura.
+- `GET /api/beers` - List
 
 A api é restful logo as ações de `Create`, `Read`, `Update` e `Delete` são baseados no verbo HTTP padrão.
 
-`GET /api/beers` - List
-`GET /api/beers/<beer_id>` - Read
-`PUT /api/beers/<beer_id>` - Update all atributes
-`PATCH /api/beers/<beer_id>` - Update only specified atributes
-`DELETE /api/beers/<beer_id>` - Delete
-`POST /api/beers` - Create
+- `GET /api/beers/<beer_id>` - Read
+- `PUT /api/beers/<beer_id>` - Update all atributes
+- `PATCH /api/beers/<beer_id>` - Update only specified atributes
+- `DELETE /api/beers/<beer_id>` - Delete
+- `POST /api/beers` - Create
+
+Todas as rotas devolvem um atributo 'profile' e 'self', que é parte da especificação JSON para o HAL (https://tools.ietf.org/html/draft-kelly-json-hal-08#section-5.6). O spring adiciona isso como padrão, e é uma forma complementar de documentação da sua rota restfull.
 
 #### Browser Hal
 
