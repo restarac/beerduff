@@ -36,4 +36,5 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("com.tngtech.jgiven:jgiven-spring:0.16.1")
     testCompile("org.assertj:assertj-core:3.11.1")
+    testCompile("com.github.javafaker:javafaker:0.16")
 }
